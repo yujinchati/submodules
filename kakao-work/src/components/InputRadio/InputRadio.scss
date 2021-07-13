@@ -1,0 +1,16 @@
+.form{
+    &.check-comm{
+        position:relative;
+        width:100%;padding:10px 0;text-align:center;border:0 none;
+        label{position:relative}
+        input{
+            position:absolute;
+            top:0;left:0%;
+            margin:0;
+            border:1px solid #dadada;
+            &:checked{border-color:transparent;background:#f40}
+            &:checked + label{color:#fff}
+        }
+        &:first-child input{border-right:0 none}
+    }
+}

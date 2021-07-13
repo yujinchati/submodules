@@ -1,0 +1,33 @@
+
+$color-default : #424342;
+$color-primary : #f40;
+
+//버튼 사이즈 추가를 위한 mixin
+@mixin size($height,$fontSize,$lineHeight){
+    height:$height;
+    font-size:$fontSize;
+    line-height:$lineHeight;
+}
+
+.btn {
+    box-sizing: border-box;
+    display: block;
+    @include size(50px,16px,50px);
+    width:100%;
+    padding: 0 12px;
+    border: 1px solid $color-default;
+    border-radius: 0;
+    background-color:$color-default;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    &.primary {
+        border: 1px solid $color-primary;
+        border-color: $color-primary;
+        background-color: $color-primary;
+        color:#fff;
+    }
+    &.small{@include size(2.375rem,0.875rem,2.375em)}
+    &.medium{@include size(1rem,1rem,1rem)}
+    &.large{@include size(3.75rem,1.25rem,3.75rem)}
+}
