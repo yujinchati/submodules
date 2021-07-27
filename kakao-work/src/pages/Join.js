@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../components/Button'
-import Input from '../components/Input';
-import InputRadio from '../components/InputRadio';
-import Selectbox from '../components/SelectBox';
-import Switch from '../components/Switch';
-
-import './Join.scss';
+import { Button,Input,InputRadio,Selectbox,Switch } from '../components';
 
 class Join extends Component {
     render() {
@@ -27,11 +21,11 @@ class Join extends Component {
             <div className={'wrap-join'}>
                 <h1>회원가입</h1>
                 <form>
-                    <div className="grid"><Input name="inpId" placeholder="아이디" /></div>
-                    <em className="wrong">아이디를 입력해주세요.</em> {/* 예시 */}
+                    <div className="grid wrong"><Input name="inpId" placeholder="아이디" /></div>
+                    <span className="wrong">아이디 값을 입력해주세요.</span>
                     <div className="grid"><Input type="password" name="inpPw" placeholder="비밀번호" /></div>
                     <div className="grid gender">
-                        <InputRadio Array={genderArr} className={'check-comm'} name="checkGender" />
+                        <InputRadio Array={genderArr} name="checkGender" />
                     </div>
                     <div className="grid birth">
                         <Selectbox Array={yearsArr} label={true} name="selectYear" areaLabel="년도">생일</Selectbox>
@@ -43,8 +37,11 @@ class Join extends Component {
                         <Input type="text" name="inpPhone" className="inp-comm" />
                         <Button type="button" size="small">인증</Button>
                     </div>
-                    <Switch id="switchAgree" name="inpAgree" tit="이용약관 동의">동의하기</Switch>
-                    <Switch id="allAgree" name="inpAll" tit="모든약관 내용에 동의합니다.">동의하기</Switch>
+                    <div className="grid switch">
+                        <Switch id="switchAgree" name="inpAgree" tit="이용약관 동의">동의하기</Switch>
+                        <Switch id="allAgree" name="inpAll" tit="모든약관 내용에 동의합니다.">동의하기</Switch>
+                    </div>
+
                     <div className="btn-submit">
                         <Button type="submit" size="large" primary="primary">가입하기</Button>
                     </div>

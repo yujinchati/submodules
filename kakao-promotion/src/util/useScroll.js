@@ -7,7 +7,7 @@ const useScroll = () => {
 
     const onScroll = () => {
         setPosition(window.scrollY);
-        if(window.scrollY > (window.innerHeight *0.2)){
+        if(window.scrollY > (window.innerHeight * 0.2)){
             setScrollActive(true);
         }else{
             setScrollActive(false);

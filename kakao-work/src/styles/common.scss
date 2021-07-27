@@ -110,12 +110,53 @@ select{
     text-decoration: none;
     cursor: pointer;
     -webkit-text-size-adjust: none}
+
   /* Layerout */
-  body {
+body {
     min-width: 320px;
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     font-size: 16px;
-  }
-  
+}
+
+@mixin gridDivide($columnfr,$gap){
+    grid-template-columns:$columnfr;
+    gap:$gap;
+}
+.grid{
+    display:grid;
+    align-items:center;
+    grid-auto-rows:auto;
+    & + & {margin-top:5px}
+    & + .wrong{display:inline-block;padding:5px 0 15px 5px;font-size:0.75rem;color:#f40}
+    &.wrong > * {border-color:#f40}
+    
+    /* grid 타입 추가 */
+    &.gender{margin-top:30px;@include gridDivide(1fr 1fr,0)}
+    &.birth{margin-top:30px;@include gridDivide(0fr 2fr 1fr 1fr,0 10px)}
+    &.phone{@include gridDivide(0fr 1fr 2fr 1fr,0 10px)}
+    &.switch{margin-top:30px}
+}
+
+/* Page */
+.wrap-join h1{
+    padding:10px 0;
+    font-size:24px}
+.wrap-join form{
+    padding-top:20px
+}
+.inp-box{
+    display:block;
+    height:38px;
+    padding:5px;
+    border:1px solid #dadada;
+    font-size:1rem
+}
+.btn-submit{
+    position:fixed;
+    width:100%;
+    bottom:20px;
+    left:0;
+    padding:0 20px}
+

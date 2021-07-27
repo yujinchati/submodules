@@ -7,14 +7,11 @@ import imgLayerBtn from '../assets/btn-trasfer.png';
 
 const cx = classNames.bind(styles);
 
-const Layer = ({onLayer ,isLayer}) => {
-    const handleLayer = (e) =>{
-        onLayer(false);
-    }
+const Layer = ({onClick ,isLayer}) => {
     return(
         <div className={cx('layer-event',isLayer?"layer-on" :"")}>
             <div className={cx('top')}>
-                <a href="/" className={cx('link-close')} onClick={handleLayer}><span className={cx('blind')}>레이어 닫기</span></a>
+                <a href="/" className={cx('link-close')} onClick={onClick}><span className={cx('blind')}>레이어 닫기</span></a>
                 <h2 className={cx('blind')}>이벤트 계좌로 1원 보내봐!</h2>
                 <img src={imgLayerTop} alt="" />
             </div>

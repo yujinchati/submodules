@@ -21,11 +21,8 @@ import imgTwit from '../assets/img-sns-twit.png';
 import imgJoin from '../assets/btn-join.png';
 
 const cx = classNames.bind(styles);
-const Promotion = ({onLayer ,isLayer}) => {
+const Promotion = ({onClick ,isLayer}) => {
     const {position,spark,scrollActive} = useScroll();
-    const handleLayer = (e) =>{
-        onLayer(true);
-    }
     return(
         <>
     <div className={cx('promo',isLayer? "hide" : "")}>
@@ -89,7 +86,7 @@ const Promotion = ({onLayer ,isLayer}) => {
                     </div>
                 </div>
             </section>
-            <button type="button" className={cx('btn-join')} onClick={handleLayer}><img src={imgJoin} alt="참여하기" /></button>
+            <button type="button" className={cx('btn-join')} onClick={onClick}><img src={imgJoin} alt="참여하기" /></button>
         </main>
         <span className={cx('bg-coin')}></span>
         <span className={cx('bg-coin-top')} style={{transform:`translateY(${-position}px)`}}></span>

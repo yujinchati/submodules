@@ -1,11 +1,15 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import { Join, Login } from './pages';
 import '../src/styles/common.scss';
-import Join from './pages/Join';
 
 
 const App = () => {
     return (
-        <Join />
+        <>
+        <Route exact path="/" component={Join}/>
+        <Route path="/login" component={Login}/>
+        </>
     );
 };
 
